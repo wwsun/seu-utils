@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+</head>
+<body>
+
+
+<input type="button" value="click me" id="myBtn">
+<script src="../lib/seu-util.js"></script>
+<script>
+    var myBtn = document.querySelector('#myBtn');
+    SeuUtil.event.addHandler(myBtn, 'click', function (event) {
+        console.log(event.type);
+        alert(this.value);
+    });
+</script>
+
+</body>
+</html>

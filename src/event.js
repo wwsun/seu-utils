@@ -1,14 +1,8 @@
 /**
  * Event Util for cross browsers environment
- * @constructor
  */
-function EventUtil () {
 
-}
-
-EventUtil.prototype = {
-
-  constructor: EventUtil,
+let EventUtil = {
 
   addHandler: function (element, type, handler) {
     if (element.addEventListener) {
@@ -56,5 +50,6 @@ EventUtil.prototype = {
       event.cancelBubble = true;
     }
   }
-
 };
+
+export default EventUtil;
