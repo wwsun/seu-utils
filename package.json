@@ -4,7 +4,8 @@
   "description": "A simple javascript utility libary for browser.",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf lib && webpack"
+    "build": "rm -rf lib && webpack",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
