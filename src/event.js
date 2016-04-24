@@ -11,7 +11,16 @@ EventUtil.prototype = {
   constructor: EventUtil,
 
   addHandler: function (element, type, handler) {
-
+    if (element.addEventListener) {
+      // DOM level 2
+      element.addEventListener(type, handler, false); // bubble
+    } else if (element.attachEvent) {
+      // IE
+      element.attachEvent("on" + type, handler);
+    } else {
+      // DOM level 0
+      element[ "on" + type ] = handler;
+    }
   },
 
   removeHandler: function (element, type, handler) {
